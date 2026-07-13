@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação de Projeto - Dr. Elias Soares</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0B132B; /* Azul Meia-Noite */
+            --secondary: #A3B1C6; /* Prata Acetinado */
+            --accent: #1A405F; /* Azul Safira */
+            --bg: #FAFAFA;
+            --surface: #EBF0F5;
+            --text-light: #ffffff;
+            --text-dark: #0B132B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--primary);
+            color: var(--text-light);
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        .slide {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: start;
+            padding: 2rem 5%;
+            position: relative;
+        }
+
+        /* Cores de fundo alternadas para os slides */
+        .slide:nth-child(odd) { background-color: var(--primary); }
+        .slide:nth-child(even) { background-color: var(--bg); color: var(--text-dark); }
+
+        .slide-content {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: var(--secondary);
+        }
+
+        .slide:nth-child(even) h2 {
+            color: var(--primary);
+        }
+        .slide:nth-child(odd) h2 {
+            color: var(--secondary);
+        }
+
+        h2 { font-size: 2.5rem; }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: inherit;
+            opacity: 0.9;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(163, 177, 198, 0.2);
+            text-align: left;
+        }
+
+        .slide:nth-child(even) .card {
+            background: white;
+            border-color: var(--surface);
+            box-shadow: 0 10px 30px rgba(11, 19, 43, 0.05);
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .slide:nth-child(odd) .card h3 {
+            color: var(--secondary);
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-15px) translateX(-50%); }
+            60% { transform: translateY(-7px) translateX(-50%); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Capa -->
+    <section class="slide">
+        <div class="slide-content">
+            <h1>DR. ELIAS SOARES</h1>
+            <p style="font-size: 1.5rem; letter-spacing: 2px;">ESPECIALISTA EM DIREITO TRIBUTÁRIO</p>
+            <div style="margin-top: 3rem;">
+                <p><strong>Apresentação do Projeto:</strong><br>Rebranding, SEO, Inteligência Artificial e Esteira de Conteúdo B2B</p>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓ Role para baixo</div>
+    </section>
+
+    <!-- Fase 1 -->
+    <section class="slide">
+        <div class="slide-content">
+            <span class="badge">FASE 1</span>
+            <h2>Identidade Visual e Branding</h2>
+            <p>Construímos uma marca que respira "Boutique Fiscal" e afasta o juridiquês visual clichê.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Cores Premium</h3>
+                    <p>O <strong>Azul Meia-Noite</strong> e o <strong>Prata Acetinado</strong> substituem o preto e o dourado clássico, transmitindo tecnologia e sobriedade de alta performance.</p>
+                </div>
+                <div class="card">
+                    <h3>Tipografia</h3>
+                    <p>A união da fonte clássica <em>Playfair Display</em> (Autoridade) com a fonte moderna <em>DM Sans</em> (Tecnologia/Velocidade).</p>
+                </div>
+                <div class="card">
+                    <h3>Templates HTML</h3>
+                    <p>O site ganhou uma nova estrutura visual, com landing pages focadas em capturar a atenção de CFOs e diretores.</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓ Role para baixo</div>
+    </section>
+
+    <!-- Fase 2 -->
+    <section class="slide">
+        <div class="slide-content">
+            <span class="badge">FASE 2</span>
+            <h2>Estratégia e Mapeamento SEO/AIO</h2>
+            <p>Mapeamos o mercado para posicionar o Dr. Elias não só no Google, mas também no ChatGPT, Gemini e Claude.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Palavras-Chave de Receita</h3>
+                    <p>Foco total em buscas transacionais, como <em>"recuperação de créditos tributários"</em> e <em>"defesa em execução fiscal"</em>, visando ROI rápido.</p>
+                </div>
+                <div class="card">
+                    <h3>Otimização para IAs (AIO)</h3>
+                    <p>Criamos o banco de Entidades para que as Inteligências Artificiais estruturem o nome do Dr. Elias sempre vinculado à <strong>Inteligência Tributária de Alta Performance</strong>.</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓ Role para baixo</div>
+    </section>
+
+    <!-- Fase 3 -->
+    <section class="slide">
+        <div class="slide-content">
+            <span class="badge">FASE 3</span>
+            <h2>Otimização Técnica Web</h2>
+            <p>Implementamos o alicerce no código do site para garantir máxima leitura e ranqueamento pelos robôs de busca.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Schema Markup</h3>
+                    <p>Inserção de códigos JSON-LD (<code>Person</code> e <code>LegalService</code>) validando o Dr. Elias como uma entidade jurídica de autoridade.</p>
+                </div>
+                <div class="card">
+                    <h3>Páginas Semânticas AIO</h3>
+                    <p>Criação das páginas <strong>Sobre</strong> e <strong>FAQ</strong> com estrutura exata para dominar a <em>Posição Zero</em> do Google e extração de dados por IAs.</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓ Role para baixo</div>
+    </section>
+
+    <!-- Fase 4 -->
+    <section class="slide">
+        <div class="slide-content">
+            <span class="badge">FASE 4</span>
+            <h2>Esteira de Produção de Conteúdo</h2>
+            <p>A máquina de atração e engajamento B2B estruturada respeitando 100% as normas da OAB.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Blog e SEO</h3>
+                    <p>4 pautas mensais traduzindo problemas fiscais complexos em "Perda e Ganho de Caixa" para educar os clientes (Inbound Marketing).</p>
+                </div>
+                <div class="card">
+                    <h3>Instagram</h3>
+                    <p>Roteiros de Reels diretos e bastidores em compliance (termos como <em>'advogado'</em> e <em>'consultor'</em> foram eliminados da bio e roteiros).</p>
+                </div>
+                <div class="card">
+                    <h3>LinkedIn (Thought Leadership)</h3>
+                    <p>Artigos analíticos e opinativos (ex: Reforma Tributária) focados em gerar networking com CEOs e Diretores Financeiros.</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓ Role para baixo</div>
+    </section>
+
+    <!-- Final -->
+    <section class="slide">
+        <div class="slide-content">
+            <h2>Pronto para Dominar o Mercado Digital.</h2>
+            <p style="font-size: 1.5rem; margin-top: 2rem;">A base visual, técnica e de conteúdo foi completamente estruturada para o sucesso em captação B2B.</p>
+            <a href="#" style="display: inline-block; margin-top: 2rem; padding: 1rem 3rem; background: var(--secondary); color: var(--primary); text-decoration: none; font-weight: bold; border-radius: 4px; font-size: 1.2rem;">Voltar ao Início ↑</a>
+        </div>
+    </section>
+
+</body>
+</html>
