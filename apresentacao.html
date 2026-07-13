@@ -28,23 +28,21 @@
             color: var(--text-light);
             overflow-y: scroll;
             scroll-snap-type: y mandatory;
-            height: 100vh;
             scroll-behavior: smooth;
         }
 
         .slide {
-            height: 100vh;
+            min-height: 100vh;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             scroll-snap-align: start;
-            padding: 2rem 5%;
+            padding: 4rem 5%;
             position: relative;
         }
 
-        /* Cores de fundo alternadas para os slides */
         .slide:nth-child(odd) { background-color: var(--primary); }
         .slide:nth-child(even) { background-color: var(--bg); color: var(--text-dark); }
 
@@ -70,14 +68,10 @@
             color: var(--secondary);
         }
 
-        .slide:nth-child(even) h2 {
-            color: var(--primary);
-        }
-        .slide:nth-child(odd) h2 {
-            color: var(--secondary);
-        }
+        .slide:nth-child(even) h2 { color: var(--primary); }
+        .slide:nth-child(odd) h2 { color: var(--secondary); }
 
-        h2 { font-size: 2.5rem; }
+        h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
 
         p {
             font-size: 1.2rem;
@@ -89,7 +83,7 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -115,9 +109,7 @@
             color: var(--accent);
         }
         
-        .slide:nth-child(odd) .card h3 {
-            color: var(--secondary);
-        }
+        .slide:nth-child(odd) .card h3 { color: var(--secondary); }
 
         .card p {
             font-size: 1rem;
@@ -137,17 +129,29 @@
 
         .scroll-indicator {
             position: absolute;
-            bottom: 2rem;
+            bottom: 1.5rem;
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
             opacity: 0.7;
+            font-size: 0.9rem;
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-15px) translateX(-50%); }
-            60% { transform: translateY(-7px) translateX(-50%); }
+            40% { transform: translateY(-10px) translateX(-50%); }
+            60% { transform: translateY(-5px) translateX(-50%); }
+        }
+
+        /* Responsividade para Celulares (Mobile) */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            p { font-size: 1rem; }
+            .slide { padding: 4rem 1.5rem 6rem 1.5rem; justify-content: flex-start; }
+            .grid { grid-template-columns: 1fr; gap: 1rem; }
+            .card { padding: 1.5rem; }
+            .scroll-indicator { bottom: 1rem; }
         }
     </style>
 </head>
@@ -155,11 +159,11 @@
 
     <!-- Capa -->
     <section class="slide">
-        <div class="slide-content">
+        <div class="slide-content" style="margin-top: auto; margin-bottom: auto;">
             <h1>DR. ELIAS SOARES</h1>
-            <p style="font-size: 1.5rem; letter-spacing: 2px;">ESPECIALISTA EM DIREITO TRIBUTÁRIO</p>
+            <p style="font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase;">A Nova Era da Sua Advocacia</p>
             <div style="margin-top: 3rem;">
-                <p><strong>Apresentação do Projeto:</strong><br>Rebranding, SEO, Inteligência Artificial e Esteira de Conteúdo B2B</p>
+                <p><strong>Apresentação do Projeto:</strong><br>Como vamos transformar sua imagem na internet e criar uma máquina de atrair os clientes certos.</p>
             </div>
         </div>
         <div class="scroll-indicator">↓ Role para baixo</div>
@@ -169,21 +173,17 @@
     <section class="slide">
         <div class="slide-content">
             <span class="badge">FASE 1</span>
-            <h2>Identidade Visual e Branding</h2>
-            <p>Construímos uma marca que respira "Boutique Fiscal" e afasta o juridiquês visual clichê.</p>
+            <h2>A Nova Cara do Escritório</h2>
+            <p>Esqueça a imagem de "advogado comum". Vamos te posicionar como uma verdadeira <strong>Boutique de Inteligência Fiscal</strong>.</p>
             
             <div class="grid">
                 <div class="card">
-                    <h3>Cores Premium</h3>
-                    <p>O <strong>Azul Meia-Noite</strong> e o <strong>Prata Acetinado</strong> substituem o preto e o dourado clássico, transmitindo tecnologia e sobriedade de alta performance.</p>
+                    <h3>Cores de Alto Padrão</h3>
+                    <p>Substituímos o preto e dourado clichês pelo <strong>Azul Meia-Noite</strong> e <strong>Prata</strong>. Cores que transmitem tecnologia, segurança e muito requinte aos olhos dos empresários.</p>
                 </div>
                 <div class="card">
-                    <h3>Tipografia</h3>
-                    <p>A união da fonte clássica <em>Playfair Display</em> (Autoridade) com a fonte moderna <em>DM Sans</em> (Tecnologia/Velocidade).</p>
-                </div>
-                <div class="card">
-                    <h3>Templates HTML</h3>
-                    <p>O site ganhou uma nova estrutura visual, com landing pages focadas em capturar a atenção de CFOs e diretores.</p>
+                    <h3>Textos e Letras Elegantes</h3>
+                    <p>Usamos um tipo de letra clássica para mostrar sua grande experiência (autoridade), misturada com letras modernas que mostram que seu escritório é rápido e resolve problemas atuais.</p>
                 </div>
             </div>
         </div>
@@ -193,11 +193,11 @@
     <!-- Logos -->
     <section class="slide">
         <div class="slide-content">
-            <span class="badge">IDENTIDADE VISUAL</span>
+            <span class="badge">IDEIAS DA MARCA</span>
             <h2>Propostas de Logotipo</h2>
-            <p>Conceitos desenvolvidos para a nova identidade da marca, com foco em autoridade e modernidade B2B.</p>
+            <p>Trouxemos algumas ideias para a sua nova marca, focadas em chamar a atenção de donos de grandes empresas.</p>
             
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
                 <div class="card" style="text-align: center; padding: 1rem;">
                     <img src="assets/logo1.png" alt="Conceito 1" style="max-width: 100%; border-radius: 8px; margin-bottom: 1rem; object-fit: contain;">
                     <p style="font-size: 0.9rem; font-weight: bold;">Opção 1 (Minimalista)</p>
@@ -220,7 +220,7 @@
                 </div>
             </div>
             <p style="font-size: 1rem; margin-top: 2rem; color: var(--secondary); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-                <strong>Recomendação de Branding:</strong> Como conversamos, as duas primeiras opções transmitem uma imagem muito mais moderna, de alta performance e totalmente focadas na sua persona B2B, eliminando a cara de "advogado convencional" que a OAB restringe nas redes.
+                <strong>O que nós recomendamos:</strong> Como conversamos, as duas primeiras opções transmitem uma imagem muito mais moderna, de alta performance e totalmente focadas em atrair os grandes empresários. Elas eliminam aquela cara de "advogado convencional" que não chama mais a atenção na internet.
             </p>
         </div>
         <div class="scroll-indicator">↓ Role para baixo</div>
@@ -230,17 +230,17 @@
     <section class="slide">
         <div class="slide-content">
             <span class="badge">FASE 2</span>
-            <h2>Estratégia e Mapeamento SEO/AIO</h2>
-            <p>Mapeamos o mercado para posicionar o Dr. Elias não só no Google, mas também no ChatGPT, Gemini e Claude.</p>
+            <h2>O Mapa da Mina no Google</h2>
+            <p>Descobrimos exatamente o que os empresários estão digitando no Google quando estão desesperados com impostos e multas.</p>
             
             <div class="grid">
                 <div class="card">
-                    <h3>Palavras-Chave de Receita</h3>
-                    <p>Foco total em buscas transacionais, como <em>"recuperação de créditos tributários"</em> e <em>"defesa em execução fiscal"</em>, visando ROI rápido.</p>
+                    <h3>Palavras que Vendem</h3>
+                    <p>Vamos focar seu site em pesquisas como <em>"recuperação de créditos tributários"</em>. É a pessoa que já tem o problema e precisa de você pra ontem, o famoso cliente pronto para fechar negócio.</p>
                 </div>
                 <div class="card">
-                    <h3>Otimização para IAs (AIO)</h3>
-                    <p>Criamos o banco de Entidades para que as Inteligências Artificiais estruturem o nome do Dr. Elias sempre vinculado à <strong>Inteligência Tributária de Alta Performance</strong>.</p>
+                    <h3>Ensinando o ChatGPT</h3>
+                    <p>Nós preparamos o terreno para que robôs como o ChatGPT aprendam que você é a maior referência do mercado. Quando um empresário pedir recomendações a eles, o seu nome estará no radar.</p>
                 </div>
             </div>
         </div>
@@ -251,17 +251,17 @@
     <section class="slide">
         <div class="slide-content">
             <span class="badge">FASE 3</span>
-            <h2>Otimização Técnica Web</h2>
-            <p>Implementamos o alicerce no código do site para garantir máxima leitura e ranqueamento pelos robôs de busca.</p>
+            <h2>O Motor do Seu Novo Site</h2>
+            <p>Não basta ter um site bonito. Ele precisa "conversar" com o Google de forma perfeita para você aparecer no topo das pesquisas sem pagar anúncios.</p>
             
             <div class="grid">
                 <div class="card">
-                    <h3>Schema Markup</h3>
-                    <p>Inserção de códigos JSON-LD (<code>Person</code> e <code>LegalService</code>) validando o Dr. Elias como uma entidade jurídica de autoridade.</p>
+                    <h3>O seu "RG" na Internet</h3>
+                    <p>Nós inserimos códigos invisíveis no seu site. Eles servem para dizer ao Google de forma clara: <em>"Atenção, este é o Dr. Elias, ele é um especialista gigante da área jurídica"</em>.</p>
                 </div>
                 <div class="card">
-                    <h3>Páginas Semânticas AIO</h3>
-                    <p>Criação das páginas <strong>Sobre</strong> e <strong>FAQ</strong> com estrutura exata para dominar a <em>Posição Zero</em> do Google e extração de dados por IAs.</p>
+                    <h3>Respostas na Ponta da Língua</h3>
+                    <p>Criamos uma página de dúvidas configurada de um jeito especial. Quando o cliente pesquisar uma dúvida no Google, suas respostas vão aparecer destacadas lá no topo da página dele.</p>
                 </div>
             </div>
         </div>
@@ -272,21 +272,21 @@
     <section class="slide">
         <div class="slide-content">
             <span class="badge">FASE 4</span>
-            <h2>Esteira de Produção de Conteúdo</h2>
-            <p>A máquina de atração e engajamento B2B estruturada respeitando 100% as normas da OAB.</p>
+            <h2>A Máquina de Conteúdo</h2>
+            <p>O que vamos postar para educar os clientes e fechar negócios de alto valor, sem ferir nenhuma regra da OAB.</p>
             
             <div class="grid">
                 <div class="card">
-                    <h3>Blog e SEO</h3>
-                    <p>4 pautas mensais traduzindo problemas fiscais complexos em "Perda e Ganho de Caixa" para educar os clientes (Inbound Marketing).</p>
+                    <h3>Textos do Blog</h3>
+                    <p>Nós pegamos aquele "juridiquês" complicado e traduzimos para a linguagem que o empresário gosta: mostrar como ele está perdendo dinheiro e como você pode proteger o caixa dele.</p>
                 </div>
                 <div class="card">
-                    <h3>Instagram</h3>
-                    <p>Roteiros de Reels diretos e bastidores em compliance (termos como <em>'advogado'</em> e <em>'consultor'</em> foram eliminados da bio e roteiros).</p>
+                    <h3>Instagram Elegante</h3>
+                    <p>Roteiros para vídeos que mostram toda a sua sabedoria, sem usar palavras que a OAB proíbe (já retiramos o "advogado" da sua bio para ficar tudo 100% dentro da lei e focado em consultoria de alto nível).</p>
                 </div>
                 <div class="card">
-                    <h3>LinkedIn (Thought Leadership)</h3>
-                    <p>Artigos analíticos e opinativos (ex: Reforma Tributária) focados em gerar networking com CEOs e Diretores Financeiros.</p>
+                    <h3>LinkedIn para Fechar Negócios</h3>
+                    <p>Textos e opiniões fortes (sobre a Reforma Tributária, por exemplo) para chamar a atenção de diretores e grandes empresas parceiras nessa rede social.</p>
                 </div>
             </div>
         </div>
@@ -295,9 +295,9 @@
 
     <!-- Final -->
     <section class="slide">
-        <div class="slide-content">
-            <h2>Pronto para Dominar o Mercado Digital.</h2>
-            <p style="font-size: 1.5rem; margin-top: 2rem;">A base visual, técnica e de conteúdo foi completamente estruturada para o sucesso em captação B2B.</p>
+        <div class="slide-content" style="margin-top: auto; margin-bottom: auto;">
+            <h2>Tudo Pronto para Dominar o Mercado.</h2>
+            <p style="font-size: 1.3rem; margin-top: 2rem;">A base visual, os códigos do site e o conteúdo estão completamente estruturados para levar o seu escritório ao próximo nível.</p>
             <a href="#" style="display: inline-block; margin-top: 2rem; padding: 1rem 3rem; background: var(--secondary); color: var(--primary); text-decoration: none; font-weight: bold; border-radius: 4px; font-size: 1.2rem;">Voltar ao Início ↑</a>
         </div>
     </section>
